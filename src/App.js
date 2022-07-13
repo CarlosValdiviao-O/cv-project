@@ -9,8 +9,20 @@ class App extends Component {
     super();
     this.state = {
       displayForm: true,
+      personalInfo: {
+        fullName: '',
+        profession: '',
+      }
     }
-    this.onSubmit= this.onSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handlePersonalChange = this.handlePersonalChange.bind(this);
+  }
+
+  handlePersonalChange = (name, e) => {
+    this.setState(() => {
+      this.state['personalInfo'][name] = e.target.value;      
+    })
+    console.log(this.state);
   }
 
   onSubmit = () => {
@@ -22,10 +34,10 @@ class App extends Component {
 
   render() {
     const { displayForm } = this.state;
-    if(displayForm == true)
+    if(displayForm === true)
     return ( 
       <div>
-        <Form /> 
+        <Form edit={displayForm} handleChange={this.handlePersonalChange}/> 
         <Preview /> 
         <Button onClick={this.onSubmit} text="Submit" name="submit"/>   
       </div>
