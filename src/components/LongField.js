@@ -1,15 +1,16 @@
 import React from "react";
 
 const LongField = (props) => {
-    const { edit, title, name, handleChange, id, group } = props;
+    const { edit, name, handleChange, id, group, value } = props;
     if(edit === true)
     return (
-        <textarea placeholder={title} onChange={(e) => handleChange(group, name, id, e) }>
+        <textarea placeholder = {value}
+            onChange = {(e) => handleChange(group, name, id, e) }>
         </textarea>
     )
     else
     return (
-        <p>{title}</p>
+        <p>{value}</p>
     )
 
 }
