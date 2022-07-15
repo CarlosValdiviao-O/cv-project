@@ -6,16 +6,19 @@ import Button from "./Button";
 
 const Preview = (props) => {
     const { edit, handleChange, jobs, handleGroupChange, addJob, handleDelete, 
-            addEducation, education, onEdit, previewButton, personalInfo } = props;
+            addEducation, education, onEdit, previewButton, personalInfo, hide } = props;
+    let aux = '';
+    if (hide === true) aux = 'hide';
  return (
-    <div>
+    <div className="preview">
         <PersonalInfo edit = {edit} handleChange = {handleChange} 
             personalInfo = {personalInfo}/>        
         <Experience edit = {edit} handleChange = {handleGroupChange} group = {jobs}
             addJob = {addJob} handleDelete = {handleDelete}/>        
         <Education edit = {edit} handleChange = {handleGroupChange} group = {education}
             addEducation = {addEducation} handleDelete = {handleDelete}/>        
-        <Button onClick = {() => onEdit()} text = {previewButton} name = "submit" type = 'button'/>
+        <Button onClick = {() => onEdit()} text = {previewButton} name = "submit"
+            type = 'button' className = {aux}/>
     </div>
  )
 }

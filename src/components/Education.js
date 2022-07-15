@@ -4,6 +4,8 @@ import EdField from "./EdField";
 
 const Education = (props) => {
     const { edit, handleChange, group, addEducation, handleDelete } = props;
+    let aux = '';
+    if (edit === true) aux = 'show';
  return (
     <div>
         <h3>Education</h3>
@@ -15,7 +17,7 @@ const Education = (props) => {
         </div>
         
         <Button onClick = {(e) => addEducation('', e)} name = "addJob"
-            text = "+Add Education" type = 'button'/>
+            text = "+Add Education" type = 'button' className = {aux}/>
     </div>
  )
 } 

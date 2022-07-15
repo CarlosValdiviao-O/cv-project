@@ -4,6 +4,8 @@ import JobField from "./JobField";
 
 const Experience = (props) => {
     const { edit, handleChange, group, addJob, handleDelete } = props;
+    let aux = '';
+    if (edit === true) aux = 'show';
  return (
     <div>
         <h3>Working Experience</h3>
@@ -14,7 +16,7 @@ const Experience = (props) => {
             })}
         </div>
         
-        <Button onClick = {(e) => addJob('', e)} name = "addJob"
+        <Button onClick = {(e) => addJob('', e)} name = "addJob" className = {aux}
             text = "+Add Work Experience" type = 'button'/>
     </div>
  )

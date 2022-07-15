@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form, .preview {
+    width: 827px;
+    height: 1170px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+form {
+    height: max-content;
+}
+
+form input, form textarea {
+    font-size: 1rem;
+    resize: none;
+}
+
+fieldset div {
+    display: flex;
+    flex-direction: column;
+    padding: 16px; 
+    gap: 4px;
+}
+
+fieldset div div {
+    padding: 0;
+}
+
+form button, .preview button {
+    width: max-content;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+form>button, .preview>button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 16px;
+}
+
+fieldset>div>button, .preview>div>button {
+    margin-left: auto;
+}
+
+.preview .personal-info {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 20px;
+    align-items: end;
+}
+
+.preview .personal-info h3, .preview button, .preview button.hide {
+    display: none;
+}
+
+.preview>button, button.show {
+    display: block;
+}
+
+.preview .fullName {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    font-size: 3rem;
+}
+
+.preview .profession {
+    grid-column: 1/3;
+    font-size: 1.5rem;
+    padding-bottom: 12px;
+}
+
+.preview .address {
+    grid-column: 3/-1;
+    grid-row: 1;
+    align-self: center;
+}
+
+.preview .phoneNumber {
+    grid-column: 3/-1;
+    grid-row: 2;
+    align-self: center;
+}
+
+.preview .email {
+    grid-column: 3/-1;
+    align-self: center;
+}
+
+.preview .personal-info .description {
+    border-top: 5px solid black;
+    grid-column: 1/4;
+    padding-top: 12px;
+    resize: none;
+}
+
+.preview h3 {
+    font-size: 1.5rem;
+    padding: 4px;
+    border-bottom: 3px solid black;
+}
+
+.preview>div {
+    padding: 10px 20px;
+}
+
+.preview>div>div>div {
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 4px 8px;
+}
+
+.preview .position, .preview .course {
+    grid-column: 1/3;
+    font-size: large;
+    font-weight: bold;
+}
+
+.preview .company, .preview .institution {
+    grid-column: 1/3;
+    font-style: italic;
+}
+
+.preview .city {
+    grid-column: 3/5;
+    text-align: center;
+    font-style: italic;
+}
+
+.preview .description {
+    grid-column: 1/-1;
+    resize: none;
+    margin-top: 4px;
+}
+
+.preview .start {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: end;
+    font-weight: bold;
+}
+
+.preview .end::before {
+    content: '-';
+}
+
+.preview .end {
+    grid-column: 4;
+    grid-row: 1;
+    font-weight: bold;
+}

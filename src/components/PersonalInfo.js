@@ -5,7 +5,7 @@ import LongField from "./LongField";
 const PersonalInfo = (props) => {
     const { edit, handleChange, personalInfo } = props;
  return (
-    <div>
+    <div className="personal-info">
         <h3>Personal Info</h3>
         <Field type = 'text' title = 'Full Name' edit = {edit} handleChange = {handleChange}
             name = 'fullName' id = "" group = "" value = {personalInfo.fullName}/>

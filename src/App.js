@@ -33,7 +33,8 @@ class App extends Component {
   handlePersonalChange = (group, name, id, e) => {
     this.setState(() => {
       this.state['personalInfo'][name] = e.target.value;      
-    })
+    });
+    console.log(this.state.personalInfo)
   }
 
   handleGroupChange = (group, name, id, e) => {
@@ -118,7 +119,7 @@ class App extends Component {
             handleGroupChange = {this.handleGroupChange} addJob = {this.addJob}
             handleDelete = {this.handleDelete} addEducation = {this.addEducation}
             education = {education} onEdit = {this.onEdit} previewButton = {previewButton}
-            personalInfo = {personalInfo}/>     
+            personalInfo = {personalInfo} hide = {true}/>     
       </div>
     )
     else
@@ -128,7 +129,7 @@ class App extends Component {
             handleGroupChange = {this.handleGroupChange} addJob = {this.addJob}
             handleDelete = {this.handleDelete} addEducation = {this.addEducation}
             education = {education} onEdit = {this.onEdit} previewButton = {previewButton}
-            personalInfo = {personalInfo}/>  
+            personalInfo = {personalInfo} hide = {false}/>  
       </div>
     )
   }
