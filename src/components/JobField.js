@@ -5,6 +5,8 @@ import LongField from "./LongField";
 
 const JobField = (props) => {
     const { edit, handleChange, job, handleDelete } = props;
+    let aux = '';
+    if (edit === true) aux = 'show';
  return (
     <div>
         <Field type = 'text' value = {job.position} edit = {edit} handleChange = {handleChange}
@@ -20,7 +22,7 @@ const JobField = (props) => {
         <LongField value = {job.description} edit = {edit} handleChange = {handleChange}
             name = 'description' id = {job.id} group = 'jobs'/>
         <Button onClick = {(e) => handleDelete('jobs', job.id, e)} name = "deleteJob"
-            text = "Delete" type = 'button'/>
+            text = "Delete" type = 'button' className = {aux}/>
     </div>
  )
 }

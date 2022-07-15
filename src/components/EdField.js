@@ -4,6 +4,8 @@ import Field from "./Field";
 
 const EdField = (props) => {
     const { edit, handleChange, course, handleDelete } = props;
+    let aux = '';
+    if (edit === true) aux = 'show';
  return (
     <div>
         <Field type = 'text' edit = {edit} id = {course.id} handleChange = {handleChange}
@@ -15,7 +17,7 @@ const EdField = (props) => {
         <Field type = 'text' edit = {edit} id = {course.id} handleChange = {handleChange}
             name = 'end' group = 'education' value = {course.end}/>
         <Button onClick = {(e) => handleDelete('education', course.id, e)}
-            name="deleteCourse" text = "Delete" type = 'button'/>
+            name="deleteCourse" text = "Delete" type = 'button' className = {aux}/>
     </div>
  )
 }

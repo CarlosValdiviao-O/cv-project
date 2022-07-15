@@ -111,6 +111,7 @@ class App extends Component {
     if(displayForm === true)
     return ( 
       <div>
+        <h1>CV Application</h1>
         <Form edit = {displayForm} handleChange = {this.handlePersonalChange} jobs = {jobs}
             handleGroupChange = {this.handleGroupChange} addJob = {this.addJob}
             handleDelete = {this.handleDelete} addEducation = {this.addEducation}
@@ -125,6 +126,7 @@ class App extends Component {
     else
     return (
       <div>
+      <h1>CV Application</h1>
         <Preview edit = {submitted} handleChange = {this.handlePersonalChange} jobs = {jobs}
             handleGroupChange = {this.handleGroupChange} addJob = {this.addJob}
             handleDelete = {this.handleDelete} addEducation = {this.addEducation}

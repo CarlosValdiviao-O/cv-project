@@ -4,7 +4,7 @@ const Field = (props) => {
     const { edit, type, name, handleChange, id, group, value } = props;
     if(edit === true)
     return (
-        <input type = {type} placeholder = {value} className = {name}
+        <input type = {type} placeholder = {value} className = {name} maxLength = {30}
             onChange = {(e) => handleChange(group, name, id, e) }>
         </input>
     )
